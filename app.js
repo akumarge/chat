@@ -25,7 +25,7 @@ var express=require('express'),
   app.engine('html',consolidate.swig);
   app.set('view engine','html');
   app.set('views',__dirname+'/public/views');
-  app.set('port',process.env.PORT || 3000);
+  app.set('port',process.env.PORT || 8000);
   app.use(express.static(path.join(__dirname, 'public/views')));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
