@@ -1,0 +1,245 @@
+<html>
+<head>
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="home_container jumbotron" >
+		<div class="outer_container">
+		<div class="index_container">
+			<div><a href="#" class="edit_link">Introduction</a></div>
+			<div><a href="#mongo_container" class="edit_link">Mongodb</a></div>
+			<div><a href="#template_container" class="edit_link">Template Engine</a></div>
+			<div><a href="#mongoose_container" class="edit_link">Mongoose</a></div>
+			<div><a href="#passport_container" class="edit_link">Passport</a></div>
+		</div>
+		<div class="content_container">
+			<div id="intro_container" class="content">
+				<h3>Introduction</h3>
+				<p>
+					<h5>
+						Node.js is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight andefficient, perfect for data-intensive real-time applications that run across distributed devices.
+					</h5>
+					<h4>Example</h4>
+					<pre>
+var http=require('http');
+http.createServer(function(req,res){
+	res.writeHead(200,{'Context-Type':'text/plain'});
+	res.write('hello node');
+	res.end('bye node');
+}).listen(3000);
+console.log('sever available in 3000');
+				</pre>
+			</p>
+		</div>
+		<div id="passport_container" class="content">
+			<h3>Passport</h3>
+			<p>
+				<h5>
+					Passport is authentication middleware for Node. It is designed to serve a singular purpose: authenticate requests. When writing modules, encapsulation is a virtue, so Passport delegates all other functionality to the application. This separation of concerns keeps code clean and maintainable, and makes Passport extremely easy to integrate into an application.
+				</h5>
+				<h4>Example</h4>
+				<pre>
+    var passport = require('passport'),
+  	LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
+				</pre>
+			</p>
+		</div>
+		<div id="mongo_container" class="content">
+			<h3>MongoDB</h3>
+			<p style="font-size:13px">
+				<h5>
+				MongoDB is a document database that provides high performance, high availability, and easy scalability.
+
+				<strong>Document Database</strong>
+				Documents (objects) map nicely to programming language data types.
+				Embedded documents and arrays reduce need for joins.
+				Dynamic schema makes polymorphism easier.
+				<strong>High Performance</strong>
+				Embedding makes reads and writes fast.
+				Indexes can include keys from embedded documents and arrays.
+				Optional streaming writes (no acknowledgments).
+				<strong>High Availability</strong>
+				Replicated servers with automatic master failover.
+				<strong>Easy Scalability</strong>
+				Automatic sharding distributes collection data across machines.
+				Eventually-consistent reads can be distributed over replicated servers.
+				<strong>Advanced Operations</strong>
+				With MongoDB Management Service (MMS) MongoDB supports a complete backup solution and full deployment monitoring.
+				
+				</h5>
+				<h4>Example</h4>
+				<pre>
+var express=require('express'),
+cons=require('consolidate'),
+mc=require('mongodb').MongoClient,
+server=require('mongodb').Server,
+app=express();
+app.engine('html',cons.swig);	
+app.set('view engine','html');
+app.set('views',__dirname+'/public/views');
+var mongoc=new mc(new server('localhost',27017,{'native_parser':true})),
+db=mongoc.db('renode');
+app.get('/',function(req,res){
+	res.json({"value":"value"});
+});
+app.get('/go',function(req,res){
+	db.collection('renodetable').findOne({},function(err,doc){
+		//res.render('index',doc);
+		res.send(doc);
+		console.log(doc);
+	});
+
+});
+mongoc.open(function(err,mongoc){
+    
+app.listen(8000);
+console.log("server is listening in port 8000");
+});
+				</pre>
+			</p>
+		</div>
+		<div id="template_container" class="content">
+			<h3>Template Engines</h3>
+			<p style="font-size:13px">
+				<h5>
+				Template Engine
+Swig is a template engine, written by Paul Armstrong.
+
+While JADE is the default template engine used by Express, and is by far the most popular template engine, it doesn't suit this boilerplate for several reasons:<br/>
+
+It's slower.<br/>
+It uses its own language, steeping the learning curve.<br/>
+You don't need it! <strong>JADE's</strong> greatest advantage is to facilitate the task of writing a lot of HTML that is being served by the server. You're going to use AngularJS client templating engine, thus relieving the need for server templating.<br/>
+On the other hand, using <strong>Swig</strong> has a few advantages:<br/>
+
+It's faster, as in way faster.<br/>
+It uses HTML.<br/>
+It has all the features we need to render our index and error pages!<br/>
+To summarize, when coding a Node.js website, you might want to use other template engines, but approaching web application development using AngularJS, we think Swig is the best choice.
+				
+				</h5>
+				<h4>Example for JADE</h4>
+				<pre>
+	var express=require('express'),
+	http=require('http'),
+	app=express();
+
+	app.set('view engine','jade');
+	app.set('views','./jade');
+
+	app.get('/',function(req,res){
+		res.render('index',{name:"ashok"});
+	});
+
+	http.createServer(app).listen(8000,function(){
+		console.log('server waiting in 8000');
+	});
+
+
+	// Jade.html
+	html
+	title	myjade
+
+	body
+		
+		b Welcome to hello world #{name}
+				</pre>
+				<h4>Example for SWIG</h4>
+				<pre>
+var express=require('express'),
+cons=require('consolidate'),
+app=express(),
+app.engine('html',cons.swig);
+app.set('view engine','html');
+app.set('views',__dirname+'/public/views');
+app.get('/',function(req,res){
+	res.render('index',value);
+	console.log(value);
+}).listen(8000);
+
+				</pre>
+			</p>
+		</div>
+		<div id="mongoose_container" class="content">
+			<h3>Mongoose</h3>
+			<p>
+					<h5>
+				Everything in Mongoose starts with a Schema. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
+
+
+			
+				</h5>
+				<h4>Example</h4>
+				<pre>
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var blogSchema = new Schema({
+  title:  String,
+  author: String,
+  body:   String,
+  comments: [{ body: String, date: Date }],
+  date: { type: Date, default: Date.now },
+  hidden: Boolean,
+  meta: {
+    votes: Number,
+    favs:  Number
+  }
+});
+				</pre>
+			</p>
+		</div>
+	</div>	
+		<div class="user_details">
+			<div><img src="images/user_thumb2.png"></div>
+			<div id="profile_name">{{user.name}}</div>
+			<a href="#" id="edit_link">Edit profile</a>
+			<a href="/logout" id="logout_link">Logout</a>
+		</div>
+		
+		
+		<div class="signup_form_container edit_form_container">
+			<form class="navbar-form navbar-left " role="signup" action="/update" method="post">
+				<div class="form-group">
+					<div>
+						<input type="text" name="edit_user_name" class="form-control" id="edit_user_name" placeholder="Username" value="{{user.name}}" required>
+					</div>
+					<div>
+						<input type="password" name="edit_user_password" class="form-control" id="edit_user_password" placeholder="Password" value="{{user.password}}" required>
+					</div>
+					<div>
+						<input type="text" name="edit_user_email" class="form-control" id="edit_user_email" placeholder="Email" value="{{user.email}}" required>
+					</div>
+					<div>
+						<input type="text" name="edit_user_mobile" class="form-control" id="edit_user_mobile" placeholder="Mobile Number" value="{{user.mobile}}"  required>
+					</div>
+					<div>
+						<button class="update_button btn btn-primary signup_button">Update</button>
+						<input type="hidden" id="user_email_hidden" class="user_email_hidden" name="user_email_hidden" value="{{user.email}}">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

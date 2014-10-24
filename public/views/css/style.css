@@ -1,0 +1,88 @@
+.container{
+	color:#ff0000;
+	margin:5% 0px 0px 0px;
+	height:auto;
+	width:20%;
+}
+.login_form_container ,.signup_form_container{
+	width: 232px;
+	margin:0 auto;
+
+}
+.index_container,.user_details,.content_container{
+	float:left;
+}
+.content_container{
+	width: 55%;
+	margin-right: 5%;
+}
+.form-group div,.index_container div{
+	margin-top: 10px
+}
+
+.signup_form_container{
+	display:none;
+
+
+}
+
+#signup_link{
+	display: block;
+	float: left;
+	margin-top: 6px;
+	margin-left: 35px;
+}
+
+#edit_link{
+	margin-left: 19px
+}
+#logout_link{
+	margin-left: 21px
+}
+.login_button ,.signup_button{
+	float:left;
+}
+.user_details{
+	width: 20%;
+}
+.edit_form_container{
+		float: left;
+		width:20%;
+}
+
+.edit_form_container input[type="text"],
+.edit_form_container input[type="password"]{
+	width: 100% !important;
+}
+.formMy{
+	padding: 0;
+}
+.index_container{
+	width: 20%;
+}
+ .jumbotron{
+ 	height:auto;
+ }
+
+ .content{
+ 	width: 100%;
+ }
+#intro_container{
+
+}
+.jumbotron p{
+ 	font-size: 13px;
+ }
+ .home_container{
+ 	float: left;
+ 	width: 100%;
+ }
+ .outer_container{
+ 	width: 960px;
+ 	margin: 0 auto;
+ 	overflow: hidden;
+ }
+
+ #profile_name{
+ 	margin-left:27px;
+ }

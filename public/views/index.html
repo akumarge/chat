@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>home page</title>
+	 <link rel="stylesheet" type="text/css" href="/css/style.css">
+	 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container jumbotron">
+		<h3>Start NODE.JS here.....</h3>
+		<div class="login_form_container">
+			<form class="navbar-form navbar-left" role="login" action="/login" method="POST">
+				<div class="form-group">
+					<div>
+						<input type="text" name="username" class="form-control" id="login_user_name" placeholder="Email" required>
+					</div>
+					<div>
+						<input type="password" name="password" class="form-control" id="login_user_password" placeholder="Password" required>
+					</div>
+					<div>
+						<button type="submit" class="btn btn-primary login_button">Login</button>
+						<a href="#" id="signup_link">Signup</a>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+		<div class="signup_form_container">
+			<form class="navbar-form navbar-left" role="signup" action="" method="POST">
+				<div class="form-group">
+					<div>
+						<input type="text" name="user_name" class="form-control" id="user_name" placeholder="Username" required>
+					</div>
+					<div>
+						<input type="password" name="user_password" class="form-control" id="user_password" placeholder="Password" required>
+					</div>
+					<div>
+						<input type="text" name="user_email" class="form-control" id="user_email" placeholder="Email" required>
+					</div>
+					<div>
+						<input type="text" name="user_mobile" class="form-control" id="user_mobile" placeholder="Mobile Number" required>
+					</div>
+					<div>
+						<input type="submit" class="btn btn-primary signup_button" value="Signup">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
+</html>
