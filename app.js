@@ -168,3 +168,6 @@ app.get('/logout', function(req, res){
 server.listen(app.get('port'),function(){
   console.log('Server is listening in port '+app.get('port'));
 });
+
+
+module.exports=app;

@@ -11,8 +11,6 @@ var express=require('express'),
         var Schema = mongoose.Schema;
         var userSchema = new Schema({
 			name : String
-			
-			
 			});
        var User = mongoose.model('user_details', userSchema);
 		app.get('/',function(req,res){
