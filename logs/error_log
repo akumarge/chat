@@ -1,0 +1,11 @@
+[2014-12-08 21:01:18,867] INFO  com.google.gerrit.server.cache.h2.H2CacheFactory : Enabling disk cache D:\node\samplenode\cache
+[2014-12-08 21:01:21,610] WARN  com.google.gerrit.sshd.SshDaemon : Disabling cipher aes192-cbc: Illegal key size; try installing unlimited cryptography extension
+[2014-12-08 21:01:21,610] WARN  com.google.gerrit.sshd.SshDaemon : Disabling cipher aes256-cbc: Illegal key size; try installing unlimited cryptography extension
+[2014-12-08 21:01:21,680] WARN  com.google.gerrit.httpd.GitWebConfig : gitweb not installed (no \usr\lib\cgi-bin\gitweb.cgi found)
+[2014-12-08 21:01:27,566] INFO  com.google.gerrit.server.git.LocalDiskRepositoryManager : Defaulting core.streamFileThreshold to 449m
+[2014-12-08 21:01:27,613] INFO  com.google.gerrit.server.plugins.PluginLoader : Loading plugins from D:\node\samplenode\plugins
+[2014-12-08 21:01:27,983] INFO  com.google.gerrit.sshd.SshDaemon : Started Gerrit SSHD-CORE-0.9.0.201311081 on *:29418
+[2014-12-08 21:01:27,990] INFO  org.eclipse.jetty.server.Server : jetty-8.1.7.v20120910
+[2014-12-08 21:01:28,055] INFO  org.eclipse.jetty.server.handler.ContextHandler : started o.e.j.s.ServletContextHandler{/,file:/C:/Users/akumar/.gerritcodereview/tmp/gerrit_7445591107378458173_app/gerrit_war/}
+[2014-12-08 21:01:32,111] INFO  org.eclipse.jetty.server.AbstractConnector : Started SelectChannelConnector@0.0.0.0:8080
+[2014-12-08 21:01:32,116] INFO  com.google.gerrit.pgm.Daemon : Gerrit Code Review 2.8 ready

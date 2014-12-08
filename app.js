@@ -164,7 +164,7 @@ app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
-//server listening on port 3000
+//server listening on port 8000
 server.listen(app.get('port'),function(){
   console.log('Server is listening in port '+app.get('port'));
 });
